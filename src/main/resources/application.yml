@@ -1,0 +1,21 @@
+server:
+  port: 10010
+  max-http-header-size: 8192
+
+spring:
+  profiles:
+    active: product
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/largebarrel?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: false
+    show-sql: true
+  thymeleaf:
+    cache: false
+logging:
+  config: classpath:log4j2.xml
